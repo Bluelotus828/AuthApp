@@ -8,10 +8,12 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import LoginScreen from './screens/LoginScreen';
-import SignupScreen from './screens/SignupScreen';
+import LoginScreen from '../screens/LoginScreen';
+import SignupScreen from '../screens/SignupScreen';
 import {Provider} from 'react-redux';
-import store from './store';
+import store from '../store';
+import {AppRegistry, Platform} from 'react-native';
+import {name as appName} from '../app.json';
 
 const Stack = createStackNavigator();
 
@@ -27,5 +29,13 @@ const App = () => {
     </Provider>
   );
 };
+
+// Register for web if running on web
+if (Platform.OS === 'web') {
+  AppRegistry.runApplication(appName, {
+    initialProps: {},
+    rootTag: document.getElementById('app'),
+  });
+}
 
 export default App;

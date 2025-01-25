@@ -34,6 +34,7 @@ local.properties
 *.keystore
 !debug.keystore
 
+
 # node.js
 #
 node_modules/
@@ -54,6 +55,12 @@ yarn-error.log
 
 # Bundle artifact
 *.jsbundle
+
+# Ignore test folder
+__tests__/
+
+# Ignore Metro bundler cache
+.bundle/
 
 # Ruby / CocoaPods
 **/Pods/
